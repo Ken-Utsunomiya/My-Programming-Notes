@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 ENV TZ=Asia/Tokyo
 
-WORKDIR /app
+WORKDIR /linux-practice
 
 RUN apt update && apt install sudo
 
@@ -14,6 +14,4 @@ RUN sudo adduser `id -un` libvirt
 RUN sudo adduser `id -un` libvirt-qemu
 RUN sudo adduser `id -un` kvm
 
-COPY . .
-
-# docker run -p 5050:5050 -v $(pwd):/app -it linux-practice
+# docker run -p 5050:5050 -v $(pwd):/linux-practice -it linux-practice
